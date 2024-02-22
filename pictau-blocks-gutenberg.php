@@ -26,7 +26,7 @@ add_action( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'my_plugin_blo
 
 
 
-add_action('wp_enqueue_scripts', 'pct_myBlocks', 10);
+// add_action('wp_enqueue_scripts', 'pct_myBlocks', 10);
 
 function pct_myBlocks() {
 
