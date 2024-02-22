@@ -11,9 +11,8 @@ function get_pct_block( $atts ) {
 
 		if($post){
 			$output = apply_shortcodes($post->post_content);
-			// ! echo first instead of 'return $output' for removing empty <p></p> tags...
-			echo $output;
-			return;
+			$buffer = preg_replace('/<!--(.|s)*?-->/', '', $output);
+			return $buffer;
 		}
 		else {
 			return 'No hay post content';
@@ -26,6 +25,7 @@ function get_pct_block( $atts ) {
 add_shortcode('pictau-blocks', 'get_pct_block');
 
 // Remove html comments <!-- --> coming from gutenberg
+
 function callback($buffer) {
     $buffer = preg_replace('/<!--(.|s)*?-->/', '', $buffer);
     return $buffer;
