@@ -4,7 +4,7 @@
  * Plugin Name: PICTAU BLOCKS GUTENBERG
  * Plugin URI: https://github.com/xenolito/wordpress-pictau-blocks-plugin
  * Description: This plugin adds and manage Blocks via shortcodes
- * Version: 2.0.0
+ * Version: 3.0.0
  * Author: Oscar Rey Tajes (@xenolito)
  * Author URI: https://twitter.com/xenolito
  * License: GPL2
