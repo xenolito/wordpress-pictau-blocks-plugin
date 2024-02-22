@@ -1,0 +1,219 @@
+/* --------------------------------
+
+Primary style
+
+-------------------------------- */
+*, *::after, *::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+body.overflow-hidden,
+html.overflow-hidden {
+  /* used when modal is visible */
+  overflow: hidden !important;
+}
+
+
+
+
+/*------------------------------------------------------------------------------------------------------*\
+
+						ANIMATED FULLSCREEN MODAL PICTAU STYLES
+
+\*------------------------------------------------------------------------------------------------------*/
+
+*, *::after, *::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+body.overflow-hidden {
+  /* used when modal is visible */
+  overflow: hidden;
+}
+
+/*------------------------------------------------------------------------------------------------------*\
+
+						END ANIMATED FULLSCREEN MODAL PICTAU
+
+\*------------------------------------------------------------------------------------------------------*/
+
+
+.afmp {
+  display: inline-block;
+  background-color: #34383c;
+  border-radius: 5em;
+  color: #ffffff;
+  white-space: nowrap;
+  font-weight: 700;
+  text-align: center;
+  padding: 1rem 2rem;
+  opacity: 1;
+  transition: width .2s 0s, color .2s 0s, visibility .2s 0s, opacity .2s 0s;
+}
+
+
+
+
+.afmp.to-circle {
+	width: 0px !important;
+	color: transparent;
+	transition: width .3s 0s, color .3s 0s;
+}
+
+.pct-modal-bg {
+  display: inline-block;
+  background-color: #34383c;
+	position: fixed;
+  z-index: 100006;
+  border-radius: 50%;
+  opacity: 0;
+  visibility: hidden;
+
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transition: opacity 0s 0.5s;
+  -moz-transition: opacity 0s 0.5s;
+  transition: opacity .6s 0s;
+
+}
+
+
+.pct-modal-bg.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.afmp-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100006;
+
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: visibility 0s 0.3s, opacity 0.3s 0s, z-index 0s 0.3s;
+  -moz-transition: visibility 0s 0.3s, opacity 0.3s 0s, z-index 0s 0.3s;
+  transition: visibility 0s 0.3s, opacity 0.3s 0s, z-index 0s 0.3s;
+}
+
+
+@media only screen and (max-width: 767px) {
+	.afmp-content {
+	    padding: 4em 10%;
+	}
+}
+
+
+
+@media only screen and (min-width: 768px) {
+	.afmp-content {
+	    padding: 4em 10%;
+	}
+}
+
+
+@media only screen and (min-width: 1170px) {
+	.afmp-content {
+	    padding: 6em 20%;
+	}
+}
+
+
+
+.afmp-content {
+    height: 100%;
+    width: 100%;
+    text-align: left;
+    overflow-y: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+
+
+
+.afmp-content.modal-is-visible {
+  z-index: 100006;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  -webkit-transition: visibility 0s 0s, opacity 0.3s 0s, z-index 0s 0s;
+  -moz-transition: visibility 0s 0s, opacity 0.3s 0s, z-index 0s 0s;
+  transition: visibility 0s 0s, opacity 0.3s 0s, z-index 0s 0s;
+}
+
+.afmp-content.modal-is-visible {
+  -webkit-overflow-scrolling: touch;
+}
+
+
+.afmp-modal-close {
+  position: fixed;
+  z-index: 120000;
+  top: 20px;
+  right: 5%;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.3) url(../img/cd-icon-close.svg) no-repeat center center;
+  /* image replacement */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+-webkit-transform-style: preserve-3d;
+
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: -webkit-transform 0.3s 0s, visibility 0s 0.3s, opacity 0.3s 0s;
+  -moz-transition: -moz-transform 0.3s 0s, visibility 0s 0.3s, opacity 0.3s 0s;
+  transition: transform 0.3s 0s, visibility 0s 0.3s, opacity 0.3s 0s;
+}
+.no-touch .afmp-modal-close:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-is-visible .afmp-modal-close {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: -webkit-transform 0.3s 0s, visibility 0s 0s, opacity 0.3s 0s;
+  -moz-transition: -moz-transform 0.3s 0s, visibility 0s 0s, opacity 0.3s 0s;
+  transition: transform 0.3s 0s, visibility 0s 0s, opacity 0.3s 0s;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+}
+@media only screen and (min-width: 768px) {
+  .afmp-modal-close {
+    top: 70px;
+  }
+}
+
+
+
+
