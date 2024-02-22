@@ -11,6 +11,7 @@ function get_pct_block( $atts ) {
 
 		if($post){
 			$output = apply_shortcodes($post->post_content);
+			// remove gutenberg comments
 			$buffer = preg_replace('/<!--(.|s)*?-->/', '', $output);
 			return $buffer;
 		}
@@ -23,20 +24,3 @@ function get_pct_block( $atts ) {
 }
 
 add_shortcode('pictau-blocks', 'get_pct_block');
-
-// Remove html comments <!-- --> coming from gutenberg
-
-function callback($buffer) {
-    $buffer = preg_replace('/<!--(.|s)*?-->/', '', $buffer);
-    return $buffer;
-}
-function buffer_start() {
-    ob_start("callback");
-}
-function buffer_end() {
-    ob_end_flush();
-}
-
-
-add_action('get_header', 'buffer_start');
-add_action('wp_footer', 'buffer_end');
